@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Cadastro de tarefas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item></ion-item>
+    <ion-item>
+       <ion-input [(ngModel)]="tarefaRealizar" label-placement="floating" fill="outline" placeholder="Cadastrar tarefa"></ion-input>
+    </ion-item>
+    <ion-item>
+       <ion-button (click)="enviarTarefa()" expand="full">Cadastrar</ion-button>
+    </ion-item>
+</ion-content>
