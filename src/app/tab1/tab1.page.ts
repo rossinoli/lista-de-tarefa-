@@ -9,31 +9,16 @@ import { Router } from '@angular/router';
 export class Tab1Page {
 
   //atributos
-  tarefas : any[] = [];
-  tarefaRealizar:string = ''; 
+  tarefaRealizar:string = '';
 
   constructor(private router: Router) {}
 
   //metodos
-  addTarefa(){
+  enviarTarefa(){
     if(this.tarefaRealizar.length > 0){
-      let novaTarefa = {novatarefa:this.tarefaRealizar, selecionado:false, habilitado: true};
-      this.tarefas.push(novaTarefa);
+      this.router.navigate(['/tabs/tab2'], {queryParams:{novatarefa:this.tarefaRealizar}});
       this.tarefaRealizar = '';
     }
   }
-
-  desabilitaCheckBox(tarefa:any){
-     if (tarefa.selecionado){
-       tarefa.habilitado = false;
-       this.enviaMensagem(tarefa.novatarefa)
-     }
-  }
-
-  enviaMensagem(tarefaRealizar: string){
-    this.router.navigate(['tabs/tab2'],{queryParams:{mensagem:tarefaRealizar}});
-
-  }
-
 
 }

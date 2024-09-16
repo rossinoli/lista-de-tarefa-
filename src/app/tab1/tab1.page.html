@@ -7,20 +7,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
-  <ion-list>
-   <ion-item *ngFor = "let tarefa of tarefas">
-      <ion-checkbox [(ngModel)]="tarefa.selecionado" (ionChange)="desabilitaCheckBox(tarefa)" [disabled]="!tarefa.habilitado">{{tarefa.novatarefa}}</ion-checkbox>
-    </ion-item>
-  </ion-list>
-    
+  <ion-item></ion-item>
     <ion-item>
        <ion-input [(ngModel)]="tarefaRealizar" label-placement="floating" fill="outline" placeholder="Cadastrar tarefa"></ion-input>
     </ion-item>
-
     <ion-item>
-       <ion-button (click)="addTarefa()" expand="full">Cadastrar</ion-button>
+       <ion-button (click)="enviarTarefa()" expand="full">Cadastrar</ion-button>
     </ion-item>
- 
-  
 </ion-content>
